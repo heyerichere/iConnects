@@ -41,4 +41,11 @@ body {
 }
 .item {
     flex-basis: 30px;
+    border-radius: 10px;
+    border: none;
+    padding-left: 10px;
+}
+h3 {
+    margin-bottom: 30px;
+    text-align: center;
 }
