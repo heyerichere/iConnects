@@ -1,5 +1,5 @@
 from flask_sqlalchemy import SQLAlchemy
-from werkzeug import generate_password_hash, check_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash
 
 db = SQLAlchemy()
 
@@ -12,7 +12,7 @@ class Student(db.Model):
     username = db.Column(db.String(30), unique=True, nullable=False)
     email = db.Column(db.String(80), unique=True, nullable=False)
     password_hash = db.Column(db.String(30), nullable=False)
-    mentor = db.Column(db.Integer, db.ForeignKey(alum.alum_id), nullable=True)
+    mentor = db.Column(db.Integer, db.ForeignKey("alum.alum_id"), nullable=True)
 
     def set_password(self, password):
         """Create hashed password and store it in the database"""
