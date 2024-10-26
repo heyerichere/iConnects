@@ -38,6 +38,7 @@ body {
     border-radius: 10px;
     background-color: darkblue;
     color: white;
+    cursor: pointer;
 }
 .item {
     flex-basis: 30px;
