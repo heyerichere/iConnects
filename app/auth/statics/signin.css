@@ -1,5 +1,44 @@
 body {
     margin: 0px;
     padding: 0px;
-    align-items: center;
+    background-color: rgb(230, 228, 228);
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+#buttons {
+    display: flex;
+    width: 100%;
+}
+.button {
+    flex:1;
+    border-radius: 10px;
+}
+.button:hover {
+    cursor: pointer;
+    background-color: rgb(137, 132, 132);
+}
+#sign-in {
+    margin-right: 5px;
+    background-color: rgb(176, 176, 244);
+}
+#sign-up {
+    margin-left: 5px;
+}
+#checkbox {
+    display: flex;
+    justify-content: space-between;
+}
+#main {
+    border-radius: 10px;
+    background-color: darkblue;
+    color: white;
+}
+.item {
+    flex-basis: 30px;
 }
