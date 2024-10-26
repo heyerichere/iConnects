@@ -1,0 +1,6 @@
+Flask==2.2.2  # Core Flask framework for building the web app
+Flask-Login==0.6.2  # Flask-Login to manage user sessions and login/logout functionalities
+Flask-SQLAlchemy==3.0.2  # Flask-SQLAlchemy for ORM (Object-Relational Mapping)
+werkzeug==2.2.2  # Werkzeug for security features like password hashing
+Flask-Migrate==3.1.0 # Flask-Migrate for handling database migrations
+python-dotenv==0.20.0  # dotenv for environment variable management (good for configuration)
