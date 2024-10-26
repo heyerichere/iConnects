@@ -30,6 +30,14 @@ class Student(db.Model):
         """Set username to a new value"""
         self.username = username
 
+    def set_mentor(self, mentor):
+        """Set mentor to a new value"""
+        self.mentor = mentor
+
+    def get_mentor(self):
+        """Returns the mentor of the student"""
+        return self.mentor
+
 
 class Alum(db.Model):
     __tablename__ = 'alum'
