@@ -4,9 +4,9 @@ from . import auth
 
 @auth.route('/login', methods=['GET', 'POST'])
 def login(): 
-    return render_template('auth/signin.html')
+    return render_template(url_for('auth','signin.html'))
 
 
 @auth.route('/signup', methods=['GET', 'POST'])
 def signup(): 
-    return render_template('auth/signin.html')
+    return render_template(url_for("auth", 'signin.html'))
