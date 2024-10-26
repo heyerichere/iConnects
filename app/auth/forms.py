@@ -5,13 +5,14 @@ db = SQLAlchemy()
 
 class Student(db.Model):
     __tablename__ = 'student'
-    id = db.Column(db.Integer, primary_key=True)
+    student_id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(30), nullable=False)
     last_name = db.Column(db.String(30), nullable=False)
     initial = db.Column(db.String(3), nullable=True)
     username = db.Column(db.String(30), unique=True, nullable=False)
     email = db.Column(db.String(80), unique=True, nullable=False)
     password_hash = db.Column(db.String(30), nullable=False)
+    mentor = db.Column(db.Integer, db.ForeignKey(alum.alum_id), nullable=True)
 
     def set_password(self, password):
         """Create hashed password and store it in the database"""
@@ -32,7 +33,7 @@ class Student(db.Model):
 
 class Alum(db.Model):
     __tablename__ = 'alum'
-    id = db.Column(db.Integer, primary_key=True)
+    alum_id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(30), nullable=False)
     last_name = db.Column(db.String(30), nullable=False)
     initial = db.Column(db.String(3), nullable=True)
