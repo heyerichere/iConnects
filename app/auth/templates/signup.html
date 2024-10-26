@@ -4,6 +4,29 @@
     <head>
         <meta charset="UTF-8">
         <title>Sign Up</title>
-        <link rel="stylesheet" href="app/auth/css/signup.css">
+        <link rel="stylesheet" href="../statics/signup.css">
     </head>
+    <body>
+        <div class="container">
+            <h3>Sign Up</h3>
+            <form action="/signup" method="post">
+                <label for="name">Name:</label> <br/>
+                <div> 
+                    <input type="text" name="fisrtname" placeholder="Enter your fisrtname" required>
+                    <input type="text" name="lastname" placeholder="Enter your lastname" required>
+                    <input type="test" name="middlename" placeholder="Enter your middlename if any" required>
+                </div>
+                <label for="username">Username:</label> <br/>
+                <input type="text" name="username" placeholder="Choose a username" required> <br/>
+                <label for="email">Email:</label> <br/>
+                <input type="email" name="email" placeholder="Enter your email" required> <br/>
+                <label for="password">Password:</label> <br/>
+                <input type="password" name="password" placeholder="Choose a strong password" required> <br/>
+                <label for="confirm_password">Confirm Password:</label> <br/>
+                <input type="password" name="confirm_password" placeholder="Confirm your password" required> <br/>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="/login">Log In</a></p>
+        </div>  
+    </body>
 </html>
