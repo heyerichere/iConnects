@@ -40,3 +40,15 @@ h3 {
     background-color: darkblue;
     color:white;
 }
+#user_type {
+    display: flex;
+    width: 100%;
+}
+#user_type input {
+    flex-grow: 1;
+    margin: 0px;
+    transform: scale(0.4);
+}
+#user_type p {
+    flex-grow: 2;
+}
