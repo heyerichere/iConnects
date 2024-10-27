@@ -6,8 +6,28 @@ from . import auth
 
 @auth.route('/')
 @auth.route('/signin', methods=['GET', 'POST'])
-def login(): 
-    return render_template('/signin.html')
+def signin(): 
+    if request.method == "POST":
+        username = request.form['username']
+        password_hash = generate_password_hash(request.form['password'])
+        student = Student.query.filter_by(username=username).first()
+        alum = Alum.query.filter_by(username=username).first()
+        if student:
+            if student.check_password(password_hash):
+                flash('You have successfully signed in!')
+                return redirect(url_for('main', 'home.html'))
+            else:
+                flash('Invalid password')
+        elif alum:
+            if alum.check_password(password_hash):
+                flash('You have successfully signed in!')
+                return redirect(url_for('main', 'home.html'))
+            else:
+                flash('Invalid password')
+        else:
+            flash('Username does not exist')
+            return redirect(url_for('/signup'))
+    return render_template('/signup.html')
 
 
 @auth.route('/signup', methods=['GET', 'POST'])
