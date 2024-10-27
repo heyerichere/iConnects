@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iConnect</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/sidebar.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <script src="{{ url_for('static', filename='js/sidebar.js') }}" defer></script> 
+</head>
+<body>
+    <i class="fas fa-bars hamburger" onclick="toggleSidebar()"></i>
+
+    <nav class="sidebar hidden">
+        <div class="profile-section">
+            <span class="close-btn" onclick="toggleSidebar()">&times;</span>
+            <img src="" alt="Profile" class="profile-image">
+            <h3>Team Devs</h3>
+            <p>Admin</p>
+        </div>
+        <ul class="menu-items">
+            <li class="menu-item">
+                <i class="fas fa-chart-line"></i>
+                <span>Dashboard</span>
+            </li>
+            <li class="menu-item">
+                <i class="fas fa-users"></i>
+                <span>Connections</span>
+            </li>
+            <li class="menu-item">
+                <i class="fas fa-user"></i>
+                <span>Profile</span>
+            </li>
+            <li class="menu-item">
+                <i class="fas fa-graduation-cap"></i>
+                <span>Mentors</span>
+            </li>
+            <li class="menu-item">
+                <i class="fas fa-calendar"></i>
+                <span>Upcoming Events</span>
+            </li>
+            <li class="menu-item">
+                <i class="fas fa-cog"></i>
+                <span>Settings</span>
+            </li>
+            <li class="menu-item">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </li>
+        </ul>
+        <div class="dark-mode-toggle">
+            <span>Dark Mode</span>
+            <label class="toggle-switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+    </nav>
+
+</body>
