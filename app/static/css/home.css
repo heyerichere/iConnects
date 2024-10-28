@@ -1,0 +1,232 @@
+:root {
+    --primary-blue: #2b669c;
+    --secondary-blue: #3577c9;
+    --dark-blue: #1a4971;
+    --white: #ffffff;
+    --gray: #f5f6fa;
+    --dark-bg: #2d2d2d;
+    --light-gray: #cccccc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    background-color: var(--gray);
+    transition: background-color 0.3s;
+}
+
+.profile-section, .menu-item span {
+    display: none;
+}
+
+.main-content {
+    margin-left: 60px;
+    padding-top: 70px;
+}
+
+
+.profile-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.menu-items {
+    list-style: none;
+}
+
+.menu-item {
+    padding: 12px 15px;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menu-item:hover {
+    background-color: var(--dark-blue);
+}
+
+.welcome-card {
+    background-color: var(--secondary-blue);
+    color: var(--white);
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.welcome-text {
+    flex: 1;
+}
+
+.welcome-image {
+    width: 300px;
+    height: auto;
+}
+
+.section-card {
+    background-color: var(--secondary-blue);
+    border-radius: 10px;
+    padding: 30px;
+    margin-bottom: 30px;
+}
+
+.section-card .section-title {
+    color: var(--white);
+    margin: 0 0 25px 0;
+    font-size: 1.5rem;
+}
+
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.event-card {
+    background: var(--white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.event-content {
+    padding: 20px;
+}
+
+.event-title {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: var(--dark-blue);
+}
+
+.event-description {
+    color: #666;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.event-link {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.event-link i {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.event-link i:hover {
+    background-color: var(--dark-blue);
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 24px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: 0.4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 16px;
+    width: 16px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--dark-blue);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Dark mode adjustments */
+body.dark-mode {
+    background-color: var(--dark-bg);
+}
+
+body.dark-mode .section-card,
+body.dark-mode {
+    background-color: var(--dark-blue);
+}
+
+body.dark-mode .event-card {
+    background-color: var(--dark-bg);
+    color: var(--white);
+}
+
+body.dark-mode .event-title,
+body.dark-mode .event-description {
+    color: var(--light-gray);
+}
