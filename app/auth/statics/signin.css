@@ -1,0 +1,64 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    background-color: rgb(230, 228, 228);
+    display: grid;
+    place-items: center;
+    height: 100vh;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+}
+#buttons {
+    display: flex;
+    width: 100%;
+    padding: 0px;
+}
+.button {
+    flex:1;
+    border-radius: 10px;
+}
+.button:hover {
+    cursor: pointer;
+    background-color: rgb(137, 132, 132);
+}
+#sign-in {
+    margin-right: 5px;
+    background-color: rgb(176, 176, 244);
+}
+#sign-up {
+    margin-left: 5px;
+}
+#user_type {
+    display: flex;
+    width: 100%;
+}
+#user_type input {
+    flex: 1;
+    transform: scale(0.4);
+}
+#user_type p {
+    flex: 2;
+}
+#checkbox {
+    display: flex;
+    justify-content: space-between;
+}
+#main {
+    border-radius: 10px;
+    background-color: darkblue;
+    color: white;
+    cursor: pointer;
+}
+.item {
+    flex-basis: 30px;
+    border-radius: 10px;
+    border: none;
+    padding-left: 10px;
+}
+h3 {
+    margin-bottom: 30px;
+    text-align: center;
+}
