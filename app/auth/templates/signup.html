@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Sign Up</title>
+        <link rel="stylesheet" href="../statics/signup.css">
+    </head>
+    <body>
+        <div class="container">
+            <h3>Sign Up</h3>
+            <form class="form" action="/signup" method="post">
+                <label class="item" for="name">Name:</label> <br/>
+                <div class="item"> 
+                    <input type="text" name="fisrtname" placeholder="Enter your fisrtname" required>
+                    <input type="text" name="lastname" placeholder="Enter your lastname" required>
+                    <input type="test" name="middlename" placeholder="Enter your middlename if any" required>
+                </div><br/>
+                <label class="item" for="username">Username:</label> <br/>
+                <input class="item" type="text" name="username" placeholder="Choose a username" required> <br/>
+                <br/>
+                <label class="item" for="email">Email:</label> <br/>
+                <input class="item" type="email" name="email" placeholder="Enter your email" required> <br/>
+                <br/>
+                <label class="item" for="password">Password:</label> <br/>
+                <input class="item" type="password" name="password" placeholder="Choose a password" required> <br/>
+                <br/>
+                <label class="item" for="confirm_password">Confirm Password:</label> <br/>
+                <input class="item" type="password" name="confirm_password" placeholder="Confirm your password" required> <br/>
+                <br/>
+                <label class="item">Type:</label> <br/>
+                <div id="user_type" class="item">
+                    <input type="radio" name="type" value="student" required> <p>Student</p>
+                    <input type="radio" name="type" value="alum" required> <p>Alum</p>
+                </div> 
+                <br/>
+                <button class="item" type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="./signin.html">Sign In</a></p>
+        </div>  
+    </body>
+</html>
