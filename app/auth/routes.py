@@ -4,6 +4,7 @@ from werkzeug.security import generate_password_hash
 
 from . import auth
 
+
 @auth.route('/')
 @auth.route('/signin', methods=['GET', 'POST'])
 def signin(): 
@@ -28,6 +29,7 @@ def signin():
             flash('Username does not exist')
             return redirect(url_for('/signup'))
     return render_template('/signup.html')
+
 
 
 @auth.route('/signup', methods=['GET', 'POST'])
@@ -65,3 +67,4 @@ def signup():
             return redirect(url_for('/signin'))
         
     return render_template('/signup.html')
+
