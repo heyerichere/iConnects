@@ -20,3 +20,4 @@ def profile():
 @login_required
 def connections(): 
     return render_template(url_for('main', 'connections.html'))
+
