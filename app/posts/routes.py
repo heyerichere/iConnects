@@ -1,3 +1,4 @@
+
 from flask import render_template, flash, jsonify, request, redirect, url_for
 from app import db
 from app.posts import posts
