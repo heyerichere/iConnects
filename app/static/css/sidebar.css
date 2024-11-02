@@ -1,0 +1,119 @@
+:root {
+    --primary-blue: #2b669c;
+    --secondary-blue: #3498db;
+    --dark-blue: #1a4971;
+    --white: #ffffff;
+    --gray: #f5f6fa;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    background-color: var(--gray);
+}
+
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 250px;
+    height: 100vh;
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding: 20px;
+    transition: transform 0.3s;
+    transform: translateX(0);
+    z-index: 1000;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.profile-section {
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+}
+.profile-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.menu-item {
+    padding: 12px 15px;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.menu-item:hover {
+    background-color: var(--dark-blue);
+}
+
+.menu-item i {
+    width: 20px;
+}
+
+.main-content {
+    margin-left: 250px;
+    padding: 20px;
+    transition: margin-left 0.3s;
+}
+
+.sidebar.hidden + .main-content {
+    margin-left:30px;
+}
+
+.hamburger {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    cursor: pointer;
+    font-size: 24px;
+    z-index: 1050;
+}
+
+.hamburger.hidden {
+    display: none;
+}
+
+.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--white);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 100%;
+    }
+
+    .main-content {
+        margin-left: 0;
+    }
+}

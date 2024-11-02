@@ -1,5 +1,5 @@
 from flask import render_template, redirect, url_for, flash, request
-from forms import db, Student, Alum
+from .forms import db, Student, Alum
 from werkzeug.security import generate_password_hash
 
 from . import auth
