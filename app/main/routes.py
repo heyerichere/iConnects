@@ -10,5 +10,5 @@ def profile():
     return render_template('main/profile.html')
 
 @main.route('/connections')
-def profile(): 
+def connections(): 
     return render_template('main/connections.html')

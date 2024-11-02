@@ -39,3 +39,7 @@ def create_post_ajax():
             "timestamp": post.timestamp.strftime('%Y-%m-%d %H:%M:%S')
         }
     })
+
+@posts.route('/notifications')
+def notifications():
+    return render_template('posts/notification.html')
