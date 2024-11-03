@@ -1,23 +1,28 @@
-from flask import render_template, url_for
+from flask import render_template, url_for, redirect
 from flask_login import login_user, login_required, logout_user
 from . import main
 
 @main.route('/')
 def index():
-    return render_template(url_for(url_for('auth', 'signin.html')))
+    return redirect(url_for('auth.signin'))
 
 @main.route('/home')
-@login_required
+# @login_required
 def home(): 
-    return render_template(url_for('main', 'home.html'))
+    return render_template('home.html')
 
-@main.route('/profile')
-@login_required
-def profile(): 
-    return render_template(url_for('main', 'profile.html'))
+# @main.route('/posts')
+# # @login_required
+# def posts(): 
+#     return render_template('post.html')
 
-@main.route('/connections')
-@login_required
-def connections(): 
-    return render_template(url_for('main', 'connections.html'))
+# @main.route('/profile')
+# # @login_required
+# def profile(): 
+#     return render_template('profile.html')
+
+# @main.route('/connections')
+# # @login_required
+# def connections(): 
+#     return render_template('connections.html')
 

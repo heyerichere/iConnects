@@ -4,58 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iConnects | Post Page</title>
-    <script src="{{ url_for('posts.statics', filename='post.css') }}" defer></script>
-    <script src="{{ url_for('posts.statics', filename='post.js') }}" defer></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/post.css') }}">
+    <script src="{{ url_for('static', filename='js/post.js') }}" defer></script>
 </head>
 <body>
-
-    <div class="sidebar">
-        <div class="profile-section">
-            <img src="{{ url_for('posts.statics', filename='images/profilepicture1.webp') }}" alt="Profile Picture" class="profile-picture-large">
-            <h3>Emily Johnson</h3>
-            <p>Admin</p>
-        </div>
-        <nav class="menu">
-            <a href="#" class="menu-item">Dashboard</a>
-            <a href="#" class="menu-item">Connections</a>
-            <a href="#" class="menu-item">Profile</a>
-            <a href="#" class="menu-item">Posts</a>
-            <a href="#" class="menu-item">Upcoming Events</a>
-            <a href="#" class="menu-item">Settings</a>
-            <a href="#" class="menu-item">Logout</a>
-        </nav>
-    </div>
     
     <div class="content-container">
         <!-- Welcome Section -->
         <div class="welcome-section">
             <h2>Welcome to iConnects</h2>
             <p>Feel free to post opportunities, events, and content</p>
-            <img src="{{ url_for('posts.statics', filename='images/welcome-image.webp') }}" alt="Welcome Image" class="welcome-image">
+            <img src="{{ url_for('static', filename='images/welcome-image.webp') }}" alt="Welcome Image" class="welcome-image">
         </div>
         
         <!-- Post Creation Form -->
         <div class="feed-container">
             <h2>Create a New Post</h2>
-            <form method="POST" action="{{ url_for('posts.post_page') }}" id="postForm">
-                {{ form.hidden_tag() }}
-                
-                <div>
-                    {{ form.title.label }}<br>
-                    {{ form.title(id="postTitle", size=40) }}
-                    {% for error in form.title.errors %}
-                        <span style="color: red;">{{ error }}</span>
-                    {% endfor %}
-                </div>
-                
-                <div>
-                    {{ form.content.label }}<br>
-                    {{ form.content(id="postText", rows=4) }}
-                    {% for error in form.content.errors %}
-                        <span style="color: red;">{{ error }}</span>
-                    {% endfor %}
-                </div>
-                
+            <form method="POST" action="" id="postForm">
+                 
                 <div>
                     <button type="button" id="submitPost" class="btn btn-primary">Post</button>
                 </div>
@@ -66,7 +32,7 @@
             {% for post in posts %}
                 <div class="post">
                     <div class="post-header">
-                        <img src="{{ url_for('posts.static', filename='images/profilepicture1.webp') }}" alt="Profile Picture" class="profile-picture">
+                        <img src="{{ url_for('static', filename='images/profilepicture1.webp') }}" alt="Profile Picture" class="profile-picture">
                         <div class="post-info">
                             <strong>{{ post.title }}</strong><br>
                             <span>{{ post.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</span>
