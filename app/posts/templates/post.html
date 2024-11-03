@@ -8,7 +8,6 @@
     <script src="{{ url_for('static', filename='js/post.js') }}" defer></script>
 </head>
 <body>
-    
     <div class="content-container">
         <!-- Welcome Section -->
         <div class="welcome-section">
@@ -20,26 +19,65 @@
         <!-- Post Creation Form -->
         <div class="feed-container">
             <h2>Create a New Post</h2>
-            <form method="POST" action="" id="postForm">
-                 
-                <div>
-                    <button type="button" id="submitPost" class="btn btn-primary">Post</button>
+            <form method="POST" action="{{ url_for('posts.create_post') }}" enctype="multipart/form-data" id="postForm">
+                <!-- Title Field -->
+                <div class="form-group">
+                    <label for="title">Title</label>
+                    <input type="text" name="title" id="title" required maxlength="100">
                 </div>
+
+                <!-- Content Field -->
+                <div class="form-group">
+                    <label for="content">Content</label>
+                    <textarea name="content" id="content" rows="4" placeholder="What's on your mind?"></textarea>
+                </div>
+
+                <!-- Image Upload Field -->
+                <div class="form-group">
+                    <label for="image">Upload Image</label>
+                    <input type="file" name="image" id="image" accept="image/*">
+                </div>
+
+                <!-- Video Upload Field -->
+                <div class="form-group">
+                    <label for="video">Upload Video</label>
+                    <input type="file" name="video" id="video" accept="video/*">
+                </div>
+
+                <!-- Event Fields (Optional) -->
+                <h3>Event Details (Optional)</h3>
+                <div class="form-group">
+                    <label for="event_name">Event Name</label>
+                    <input type="text" name="event_name" id="event_name" maxlength="100">
+                </div>
+                <div class="form-group">
+                    <label for="event_date">Event Date</label>
+                    <input type="date" name="event_date" id="event_date">
+                </div>
+                <div class="form-group">
+                    <label for="event_description">Event Description</label>
+                    <textarea name="event_description" id="event_description" rows="3"></textarea>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary">Post</button>
             </form>
 
             <!-- Existing Posts Feed -->
             <h2>Recent Posts</h2>
-            {% for post in posts %}
+            <div id="posts-feed">
+                <!-- Example Post 1 -->
                 <div class="post">
                     <div class="post-header">
                         <img src="{{ url_for('static', filename='images/profilepicture1.webp') }}" alt="Profile Picture" class="profile-picture">
                         <div class="post-info">
-                            <strong>{{ post.title }}</strong><br>
-                            <span>{{ post.timestamp.strftime('%Y-%m-%d %H:%M:%S') }}</span>
+                            <strong>Sample Title 1</strong><br>
+                            <span>2024-11-03 12:30:45</span>
                         </div>
                     </div>
                     <div class="post-content">
-                        <p>{{ post.content }}</p>
+                        <p>This is a sample post content.</p>
+                        <img src="{{ url_for('static', filename='images/sample-image1.jpg') }}" alt="Post Image" class="post-image">
                     </div>
                     <div class="post-actions">
                         <button onclick="likePost()">Like</button>
@@ -47,9 +85,28 @@
                         <button onclick="sharePost()">Reshare</button>
                     </div>
                 </div>
-            {% endfor %}
+
+                <!-- Example Post 2 -->
+                <div class="post">
+                    <div class="post-header">
+                        <img src="{{ url_for('static', filename='images/profilepicture2.webp') }}" alt="Profile Picture" class="profile-picture">
+                        <div class="post-info">
+                            <strong>Sample Title 2</strong><br>
+                            <span>2024-11-03 11:15:22</span>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        <p>Here’s another sample post with a video attachment.</p>
+                        <video src="{{ url_for('static', filename='videos/sample-video.mp4') }}" controls class="post-video"></video>
+                    </div>
+                    <div class="post-actions">
+                        <button onclick="likePost()">Like</button>
+                        <button onclick="commentPost()">Comment</button>
+                        <button onclick="sharePost()">Reshare</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
 </body>
 </html>
