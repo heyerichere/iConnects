@@ -1,6 +1,12 @@
 function toggleSidebar() {
     const sidebar = document.querySelector('.sidebar');
-    const hamburger = document.querySelector('.hamburger'); 
+    const mainContent = document.querySelector('.main-content');
+
     sidebar.classList.toggle('hidden');
-    hamburger.classList.toggle('hidden');
+    
+    if (sidebar.classList.contains('hidden')) {
+        mainContent.style.marginLeft = '30px';
+    } else {
+        mainContent.style.marginLeft = '250px'; 
+    }
 }

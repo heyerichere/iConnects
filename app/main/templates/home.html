@@ -9,7 +9,8 @@
     <script src="{{ url_for('static', filename='js/home.js') }}" defer></script>
 </head>
 <body>
-
+    {% extends 'base.html' %}
+    {% block content %}
     <main class="main-content">
         <!-- Welcome section -->
         <div class="welcome-card">
@@ -98,6 +99,7 @@
             </div>
         </div>
     </main>
+    {% endblock %}
     
 </body>
 </html>

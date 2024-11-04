@@ -1,19 +1,21 @@
-<!-- templates/layout/navbar.html -->
-<nav class="navbar">
-    <div class="navbar-container">
-        <!-- Logo -->
-        <a href="/" class="navbar-logo">
-            <img src="../statics/images/logo.png" alt="iConnects Logo">
-            iConnects
-        </a>
-
-        <!-- User icon and dropdown -->
-        <div class="navbar-user">
-            <i class="fas fa-user-circle"></i>
-            <div class="navbar-dropdown">
-                <a href="/settings">Settings</a>
-                <a href="/logout">Logout</a>
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"> <!-- For icons -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='navbar.css') }}"> 
+    <title>iConnects Navbar</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-content">
+            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="iConnects Logo" class="navbar-logo">
+            <span class="navbar-title">iConnects</span>
         </div>
-    </div>
-</nav>
+    </nav>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
