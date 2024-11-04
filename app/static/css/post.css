@@ -38,7 +38,7 @@ body {
 .welcome-section {
     background-color: var(--dark-blue);
     color: white;
-    padding: 30px; /* Increase padding to make section taller */
+    padding: 30px;
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -47,7 +47,7 @@ body {
 }
 
 .welcome-image {
-    height: 150px; /* Increase the height for a larger image */
+    height: 150px;
     width: 250px;
     border-radius: 5px;
 }
