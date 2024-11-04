@@ -8,6 +8,8 @@
     <script src="{{ url_for('static', filename='js/post.js') }}" defer></script>
 </head>
 <body>
+    {% extends 'base.html' %}
+    {% block content %}
     <div class="content-container">
         <!-- Welcome Section -->
         <div class="welcome-section">
@@ -77,7 +79,7 @@
                     </div>
                     <div class="post-content">
                         <p>This is a sample post content.</p>
-                        <img src="{{ url_for('static', filename='images/sample-image1.jpg') }}" alt="Post Image" class="post-image">
+                        <img src="{{ url_for('static', filename='images/post1.jpg') }}" alt="Post Image" class="post-image">
                     </div>
                     <div class="post-actions">
                         <button onclick="likePost()">Like</button>
@@ -97,7 +99,7 @@
                     </div>
                     <div class="post-content">
                         <p>Here’s another sample post with a video attachment.</p>
-                        <video src="{{ url_for('static', filename='videos/sample-video.mp4') }}" controls class="post-video"></video>
+                        <video src="{{ url_for('static', filename='images/post2.mp4') }}" controls class="post-video"></video>
                     </div>
                     <div class="post-actions">
                         <button onclick="likePost()">Like</button>
@@ -108,5 +110,7 @@
             </div>
         </div>
     </div>
+    {% endblock %}
+
 </body>
 </html>
