@@ -18,12 +18,12 @@ def affinity_difference(post_affinites, resume_affinities): # Find difference be
     return total_difference
 
 def match_posts_to_resume(posts, resume_affinities, number_of_post_matches = 5): # Heap to store resume differences and retrieve top_n matches
-    job_heap = []
+    post_heap = []
     
     for post_title, post_affinites in posts.items(): # Will change this to db query method after fixing db implementation
         difference_score = affinity_difference(post_affinites, resume_affinities)
-        heapq.heappush(job_heap, (difference_score, post_title))
+        heapq.heappush(post_heap, (difference_score, post_title))
     
-    top_jobs = heapq.nsmallest(number_of_post_matches, job_heap)
+    top_posts = heapq.nsmallest(number_of_post_matches, post_heap)
     
-    return top_jobs
+    return top_posts
