@@ -35,11 +35,10 @@ body {
     margin-left: 30px;
 }
 
-/* Welcome Section Styling */
 .welcome-section {
-    background-color: #1a73e8;
+    background-color: var(--dark-blue);
     color: white;
-    padding: 20px;
+    padding: 30px;
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -48,8 +47,8 @@ body {
 }
 
 .welcome-image {
-    height: 80px;
-    width: auto;
+    height: 150px;
+    width: 250px;
     border-radius: 5px;
 }
 
@@ -158,10 +157,10 @@ textarea#event_description {
 
 .post-image,
 .post-video {
-    width: 100%;
+    width: 80%;
     border-radius: 8px;
     margin-top: 10px;
-    max-height: 300px;
+    max-height: 500px;
     object-fit: cover;
 }
 
