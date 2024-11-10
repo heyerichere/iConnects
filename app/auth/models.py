@@ -1,9 +1,9 @@
 from flask_sqlalchemy import SQLAlchemy
 from werkzeug.security import generate_password_hash, check_password_hash
+from flask_login import UserMixin
+from app import db
 
-db = SQLAlchemy()
-
-class Student(db.Model):
+class Student(db.Model, UserMixin):
     __tablename__ = 'student'
     student_id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(30), nullable=False)
@@ -39,7 +39,7 @@ class Student(db.Model):
         return self.mentor
 
 
-class Alum(db.Model):
+class Alum(db.Model, UserMixin):
     __tablename__ = 'alum'
     alum_id = db.Column(db.Integer, primary_key=True)
     first_name = db.Column(db.String(30), nullable=False)

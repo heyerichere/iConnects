@@ -9,27 +9,29 @@
     <body>
         <div class="container">
             <h3 class="item">Welcome to iConnects</h3>
-            <div class="item" id="buttons">
-                <button class="button" id="sign-in">Sign in</button>
-                <button class="button" id="sign-up">Sign up</button>
-            </div> <br/>
-            <input class="item" type="text" placeholder="Email"/> <br/>
-            <input class="item" type="password" placeholder="Password"/> <br/>
-            <div class="item">
-                <label>Type:</label>
-                <div id="user_type" class="item">
-                    <input type="radio" name="type" value="student" required> <p>Student</p>
-                    <input type="radio" name="type" value="teacher" required> <p>Alum</p>
-                </div>
-            </div> <br/>
-            <div class="item" id="checkbox">
-                <div>
-                    <input type="checkbox" id="remember-me"/>
-                    <label for="remember-me">Remember me</label>
-                </div>
-                <a href="./signup.html">Forgot password?</a>
-            </div> <br/>
-            <button class="item" id="main">Sign in</button>
+            <form class="form" action="/signin" method="post">
+                <div class="item" id="buttons">
+                    <button class="button" id="sign-in">Sign in</button>
+                    <button class="button" id="sign-up">Sign up</button>
+                </div> <br/>
+                <input class="item" type="text" name="username" placeholder="Username"/> <br/>
+                <input class="item" type="password" name="password" placeholder="Password"/> <br/>
+                <div class="item">
+                    <label>Type:</label>
+                    <div id="user_type" class="item">
+                        <input type="radio" name="type" value="student" required> <p>Student</p>
+                        <input type="radio" name="type" value="alum" required> <p>Alum</p>
+                    </div>
+                </div> <br/>
+                <div class="item" id="checkbox">
+                    <div>
+                        <input type="checkbox" id="remember-me"/>
+                        <label for="remember-me">Remember me</label>
+                    </div>
+                    <a href="{{url_for('auth.signup')}}">Forgot password?</a>
+                </div> <br/>
+                <button class="item" id="main" type="submit">Sign in</button>
+            </form>
         </div>
     </body>
 </html>
