@@ -26,14 +26,14 @@ def signin():
             if student.check_password(password_hash):
                 flash('You have successfully signed in!')
                 login_user(student)
-                return redirect(url_for('main', 'home.html'))
+                return redirect(url_for('main.home'))
             else:
                 flash('Invalid password')
         elif alum:
             if alum.check_password(password_hash):
                 flash('You have successfully signed in!')
                 login_user(alum)
-                return redirect(url_for('main', 'home.html'))
+                return redirect(url_for('main.home'))
             else:
                 flash('Invalid password')
         else:
@@ -78,7 +78,5 @@ def signup():
         
     return render_template('signup.html')
 
-@login_manager.user_loader
-def load_user(current_user):
-    return int(current_user.id)
+
 

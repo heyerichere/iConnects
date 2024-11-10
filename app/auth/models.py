@@ -37,6 +37,9 @@ class Student(db.Model, UserMixin):
     def get_mentor(self):
         """Returns the mentor of the student"""
         return self.mentor
+    
+    def get_id(self):
+        return self.student_id
 
 
 class Alum(db.Model, UserMixin):
@@ -64,3 +67,6 @@ class Alum(db.Model, UserMixin):
     def set_username(self, username):
         """Set username to a new value"""
         self.username = username
+
+    def get_id(self):
+        return self.alum_id
