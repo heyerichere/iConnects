@@ -1,7 +1,7 @@
 import heapq
 
 
-def affinity_difference(post_affinites, resume_affinities): # Find difference between post and resume affinities
+def affinity_difference(post_affinites, resume_affinities):
     keywords = set(post_affinites.keys())
     resume_keywords = set(resume_affinities.keys())
     
@@ -17,10 +17,10 @@ def affinity_difference(post_affinites, resume_affinities): # Find difference be
     
     return total_difference
 
-def match_posts_to_resume(posts, resume_affinities, number_of_post_matches = 5): # Heap to store resume differences and retrieve top_n matches
+def match_posts_to_resume(posts, resume_affinities, number_of_post_matches = 5):
     post_heap = []
     
-    for post_title, post_affinites in posts.items(): # Will change this to db query method after fixing db implementation
+    for post_title, post_affinites in posts.items():
         difference_score = affinity_difference(post_affinites, resume_affinities)
         heapq.heappush(post_heap, (difference_score, post_title))
     
