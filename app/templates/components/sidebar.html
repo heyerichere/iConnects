@@ -17,11 +17,15 @@
             <p>Admin</p>
         </div>
         <ul class="menu-items">
-            <li class="menu-item"><i class="fas fa-chart-line"></i>
+            <li class="menu-item"><i class="fas fa-home"></i>
                 <a href="{{ url_for('main.home') }}" style="color: inherit; text-decoration: none;">
-                    <span>Dashboard</span>
+                    <span>Home</span>
                 </a>
-            <li class="menu-item"><i class="fas fa-users"></i> <span>Connections</span></li>
+            <li class="menu-item"><i class="fas fa-users"></i> 
+                <a href="{{ url_for('connections.show_connections') }}" style="color: inherit; text-decoration: none;">
+                    <span>Connections</span>
+                </a>
+            </li>
             <li class="menu-item"><i class="fas fa-user"></i> <span>Profile</span></li>
             <li class="menu-item"><i class="fas fa-graduation-cap"></i> <span>Mentors</span></li>
             <li class="menu-item"><i class="fas fa-calendar"></i> <span>Upcoming Events</span></li>

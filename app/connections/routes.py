@@ -1,7 +1,7 @@
 from flask import render_template, url_for, redirect
-from . import posts
+from . import connections
 
-@posts.route('/connections')
+@connections.route('/connections')
 # @login_required
-def show_posts():
+def show_connections():
     return render_template('connections.html')

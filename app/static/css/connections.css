@@ -4,12 +4,14 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f0f4f8;
+    transition: margin-left 0.3s;
 }
 
-.container {
+.connections-content {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    transition: margin-left 0.3s ease;
 }
 
 /* Header styling */

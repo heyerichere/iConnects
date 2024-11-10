@@ -38,4 +38,7 @@ def create_app():
     from .posts import posts as posts_blueprint
     app.register_blueprint(posts_blueprint)
 
+    from .connections import connections as connections_blueprint
+    app.register_blueprint(connections_blueprint)
+
     return app
