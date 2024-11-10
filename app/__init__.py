@@ -15,12 +15,12 @@ def create_app():
     app.config.from_object(Config)
 
     # Initialize extensions
-    # db.init_app(app)
-    # migrate.init_app(app, db)
-    # login_manager.init_app(app)
+    db.init_app(app)
+    migrate.init_app(app, db)
+    login_manager.init_app(app)
 
     # Register models
-    # from .auth.models import Student, Alum
+    from .auth.models import Student, Alum
 
     # Register blueprints
     from .auth import auth as auth_blueprint
