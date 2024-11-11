@@ -6,3 +6,5 @@ Flask-Migrate==3.1.0 # Flask-Migrate for handling database migrations
 python-dotenv==0.20.0  # dotenv for environment variable management (good for configuration)
 pymupdf4llm==0.0.17
 flask_wtf==1.2.2
+openai==1.54.3
+gunicorn
