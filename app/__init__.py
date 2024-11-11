@@ -21,6 +21,7 @@ def create_app():
     with app.app_context():
         from .auth.models import Student, Alum
         from .posts.models import Post
+        db.create_all()
 
     @login_manager.user_loader
     def load_user(user_id):
