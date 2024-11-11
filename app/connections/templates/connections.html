@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IConnect - Connections</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='css/connections.css')}}">
+    <script src="{{url_for('static', filename='js/connections.js')}}"></script>
+</head>
+<body>
+    {% extends 'base.html' %}
+    {% block content %}
+    <div class="connections-content">
+        <section class="connections-section">
+            <h2>Your Connections</h2>
+            <div id="connections-container" class="connections-container"></div>
+        </section>
+    </div>
+    {% endblock %}
+    <script src="{{url_for('static', filename='js/sidebar.js')}}"></script>
+    
+</body>
+</html>

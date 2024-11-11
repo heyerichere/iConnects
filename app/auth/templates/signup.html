@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Sign Up</title>
-        <link rel="stylesheet" href="../statics/signup.css">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/signup.css') }}">
     </head>
     <body>
         <div class="container">
@@ -12,9 +12,9 @@
             <form class="form" action="/signup" method="post">
                 <label class="item" for="name">Name:</label> <br/>
                 <div class="item"> 
-                    <input type="text" name="fisrtname" placeholder="Enter your fisrtname" required>
+                    <input type="text" name="firstname" placeholder="Enter your fisrtname" required>
                     <input type="text" name="lastname" placeholder="Enter your lastname" required>
-                    <input type="test" name="middlename" placeholder="Enter your middlename if any" required>
+                    <input type="test" name="middlename" placeholder="Enter your middlename if any" >
                 </div><br/>
                 <label class="item" for="username">Username:</label> <br/>
                 <input class="item" type="text" name="username" placeholder="Choose a username" required> <br/>
@@ -36,7 +36,7 @@
                 <br/>
                 <button class="item" type="submit">Sign Up</button>
             </form>
-            <p>Already have an account? <a href="./signin.html">Sign In</a></p>
+            <p>Already have an account? <a href="{{url_for('auth.signin')}}">Sign In</a></p>
         </div>  
     </body>
 </html>

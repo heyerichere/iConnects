@@ -17,13 +17,28 @@
             <p>Admin</p>
         </div>
         <ul class="menu-items">
-            <li class="menu-item"><i class="fas fa-chart-line"></i> <span>Dashboard</span></li>
-            <li class="menu-item"><i class="fas fa-users"></i> <span>Connections</span></li>
+            <li class="menu-item"><i class="fas fa-home"></i>
+                <a href="{{ url_for('main.home') }}" style="color: inherit; text-decoration: none;">
+                    <span>Home</span>
+                </a>
+            <li class="menu-item"><i class="fas fa-users"></i> 
+                <a href="{{ url_for('connections.show_connections') }}" style="color: inherit; text-decoration: none;">
+                    <span>Connections</span>
+                </a>
+            </li>
             <li class="menu-item"><i class="fas fa-user"></i> <span>Profile</span></li>
             <li class="menu-item"><i class="fas fa-graduation-cap"></i> <span>Mentors</span></li>
             <li class="menu-item"><i class="fas fa-calendar"></i> <span>Upcoming Events</span></li>
+            <li class="menu-item"><i class="fas fa-file-alt"></i> 
+                <a href="{{ url_for('posts.create_post') }}" style="color: inherit; text-decoration: none;">
+                    <span>Posts</span>
+                </a>
+            </li>
             <li class="menu-item"><i class="fas fa-cog"></i> <span>Settings</span></li>
-            <li class="menu-item"><i class="fas fa-sign-out-alt"></i> <span>Logout</span></li>
+            <li class="menu-item"><i class="fas fa-sign-out-alt"></i>
+                <a href="{{ url_for('auth.signin') }}" style="color: inherit; text-decoration: none;">
+                    <span>Logout</span>
+                </a>
         </ul>
         <div class="dark-mode-toggle">
             <span>Dark Mode</span>

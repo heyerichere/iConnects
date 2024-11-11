@@ -3,7 +3,6 @@ from wtforms import StringField, TextAreaField, SubmitField, FileField, DateFiel
 from wtforms.validators import DataRequired, Length, Optional
 
 class PostForm(FlaskForm):
-    # Main post fields
     title = StringField("Title", validators=[DataRequired(), Length(max=100)])
     content = TextAreaField("Content", validators=[DataRequired(), Length(min=1)])
 

@@ -14,15 +14,21 @@ def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
 
-    # Initialize extensions
-    # db.init_app(app)
-    # migrate.init_app(app, db)
-    # login_manager.init_app(app)
+    db.init_app(app)
+    migrate.init_app(app, db)
+    login_manager.init_app(app)
 
-    # Register models
-    # from .auth.models import Student, Alum
+    with app.app_context():
+        from .auth.models import Student, Alum
+        from .posts.models import Post
+        db.create_all()
 
-    # Register blueprints
+    @login_manager.user_loader
+    def load_user(user_id):
+        user = Alum.query.get(int(user_id))
+        return user if user else Student.query.get(int(user_id))
+
+    #blueprints
     from .auth import auth as auth_blueprint
     app.register_blueprint(auth_blueprint)
 
@@ -31,5 +37,8 @@ def create_app():
 
     from .posts import posts as posts_blueprint
     app.register_blueprint(posts_blueprint)
-    
+
+    from .connections import connections as connections_blueprint
+    app.register_blueprint(connections_blueprint)
+
     return app
